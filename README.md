@@ -52,4 +52,17 @@ Usage
  * Start GEdit
  * Open Edit-Preferences, then Plugins and check "GoBuild after save" plugin.
  
- 
+Idea
+----
+
+Plugin idea is based on the fact that Go builds are fast for even decent size
+projects. Because build is fast plugin can run on every Save and still appear 
+responsive.
+Go development with this plugin goes into tight iteration of save-edit-save-edit
+cycle. 
+
+If you work on Go projects with build times over 5 seconds this plugin should be
+modified to use keyboard shortcut (such as 'F5') instead of on_save action.
+
+
+
