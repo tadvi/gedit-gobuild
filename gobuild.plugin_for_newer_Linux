@@ -1,0 +1,9 @@
+[Plugin]
+Loader=python3
+Module=gobuild
+IAge=3
+Name=GoBuild after save. Show errors in Statusbar.
+Description=Runs go build after save. Runs go test if current file has _test.go in the name.
+Authors=Tad Vizbaras
+Copyright=Copyright © 2013 Tad Vizbaras
+Website=github.com/tadvi/gedit-gobuild
