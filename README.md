@@ -17,17 +17,17 @@ Current build directory is determined based on current open file directory.
 takes too long.
  * Not designed for Go unit tests that take long time to run.
 
-<img src="gobuildscreen1.png">
+![screen1](gobuildscreen1.png)
 
 Plugin captures go build errors and shows them in the Gedit status bar.
 It also jumps to the first error and highlights error line if error is in 
 the current file.
 
-<img src="gobuildscreen2.png">
+![screen2](gobuildscreen2.png)
 
 Shows last successful build.
 
-<img src="gobuildscreen3.png">
+![screen3](gobuildscreen3.png)
 
 Shows "go test" failures.
 
@@ -64,5 +64,6 @@ cycle.
 If you work on Go projects with build times over 5 seconds this plugin should be
 modified to use keyboard shortcut (such as 'F5') instead of on_save action.
 
+Ops, I forgot to mention...Go is **awesome**. But you probably already know that.
 
 
