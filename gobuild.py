@@ -145,6 +145,7 @@ class GoBuildAfterSavePlugin(GObject.Object, Gedit.ViewActivatable):
 				k = len(output)
 				if k > 81: 
 					k = 80	# limit output to 80 chars
+				output = output.decode(encoding)
 				output = output[:k]
 				output = output.replace("\n", " ")
 				self.show_msg(output)

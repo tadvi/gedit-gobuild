@@ -66,4 +66,9 @@ modified to use keyboard shortcut (such as 'F5') instead of on_save action.
 
 Ops, I forgot to mention...Go is **awesome**. But you probably already know that.
 
+Update version 1.1
+------------------
+
+Fixes issues in 'go test' execution.
+
 
