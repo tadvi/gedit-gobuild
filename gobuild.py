@@ -60,7 +60,7 @@ class GoBuildAfterSavePlugin(GObject.Object, Gedit.ViewActivatable):
 		if self.doc.get_language():
 			lang = self.doc.get_language().get_name()		
 			if lang == "Go":
-				self.timeout_command(4.8)	# do not wait for more than 4.8 sec.
+				self.timeout_command(6.8)	# do not wait for more than 6.8 sec.
 			
 	def show_error(self, msg):
 		if GoBuildGlobal.windowClass != 0:
@@ -186,7 +186,7 @@ class GoBuildAfterSaveWindowPlugin(GObject.Object, Gedit.WindowActivatable):
 		pass
 
 	def setPanelErrorMessage(self, msg):
-		self._branch_label.set_markup("<span background='#d01010' foreground='#f0f0f0' size='large'> " + msg + " </span>")
+		self._branch_label.set_markup("<span background='#f0775a' foreground='#000000' size='large'> " + msg + " </span>")
 
 	def setPanelSimpleMessage(self, msg):
 		self._branch_label.set_markup("<span background='#d0d0d0' foreground='#000000' size='large'> " + msg + " </span>")
