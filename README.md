@@ -70,5 +70,27 @@ Update version 1.1
 ------------------
 
 Fixes issues in 'go test' execution.
+Increased timeout to 10 seconds to allow longer running tests.
+
+Working with multiple Go environments
+-------------------------------------
+
+It is possible to work with multiple Go environments by simply setting GOPATH before you execute gedit.
+One way to do it is by adding function listed below to .bash_aliases file. Restart your bash session.
+
+Now you can execute something like 
+
+$$ gg dev/myproject
+
+Assuming you have folders dev/myproject/src under your home directory. This simple script will
+set GOPATH and start gedit.
+
+    function gg() { 
+    export GOPATH=/home/your_username/$@
+    echo 'path set'
+    printenv | grep GOPATH
+    cd /home/your_username/$@/src
+    gedit > /dev/null 2>&1 &
+    }
 
 
