@@ -80,7 +80,7 @@ One way to do it is by adding function listed below to .bash_aliases file. Resta
 
 Now you can execute something like 
 
-$$ gg dev/myproject
+$ gg dev/myproject
 
 Assuming you have folders dev/myproject/src under your home directory. This simple script will
 set GOPATH and start gedit.
@@ -93,4 +93,7 @@ set GOPATH and start gedit.
     gedit > /dev/null 2>&1 &
     }
 
+Instead of starting gedit via shortcut use "gg" alias from the bash. That way your GOPATH will
+be correctly set for go build to run. Note: this is important only if you have a need to set 
+GOPATH and you have multiple environments to work on.
 
