@@ -60,7 +60,7 @@ class GoBuildAfterSavePlugin(GObject.Object, Gedit.ViewActivatable):
 		if self.doc.get_language():
 			lang = self.doc.get_language().get_name()		
 			if lang == "Go":
-				self.timeout_command(6.8)	# do not wait for more than 6.8 sec.
+				self.timeout_command(9.8)	# do not wait for more than 9.8 sec.
 			
 	def show_error(self, msg):
 		if GoBuildGlobal.windowClass != 0:
@@ -148,7 +148,7 @@ class GoBuildAfterSavePlugin(GObject.Object, Gedit.ViewActivatable):
 				output = output.decode(encoding)
 				output = output[:k]
 				output = output.replace("\n", " ")
-				self.show_msg(output)
+				self.show_error(output)
 				return
 		else:	# not error returned
 			self.hide()
