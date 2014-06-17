@@ -97,3 +97,24 @@ Instead of starting gedit via shortcut use "gg" alias from the bash. That way yo
 be correctly set for go build to run. Note: this is important only if you have a need to set 
 GOPATH and you have multiple environments to work on.
 
+devrun - bonus plugin
+---------------------
+
+devrun is a bonus plugin that simply runs ./dev bash script in current file directory when you press F5.
+Current file directory is a folder of the active tab in the Gedit.
+
+The purpose of this plugin is simple: execute ./dev script. I use it to restart webserver but it
+can be used for anything. ./dev script should NOT block and return within few seconds.
+
+There is an example of basic ./dev bash script below. It kills old webserver process, rebuilds it and
+restarts.
+
+	#!/bin/bash
+	killall -9 transsrv
+	go build .
+	./transsrv -http=:8080 > log.txt 2>&1 &
+	
+Make sure to add execute permission to this script with chmod +x dev or similar.
+
+
+

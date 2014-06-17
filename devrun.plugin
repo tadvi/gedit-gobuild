@@ -1,0 +1,9 @@
+[Plugin]
+Loader=python
+Module=devrun
+IAge=3
+Name=DevRun runs ./dev shell script after F5. 
+Description=Runs after F5. Executes ./dev script in current dir.
+Authors=Tad Vizbaras
+Copyright=Copyright © 2013 Tad Vizbaras
+Website=http://github.com/tadvi/gedit-gobuild
