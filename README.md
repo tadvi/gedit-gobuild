@@ -117,5 +117,13 @@ restarts.
 	
 Make sure to add execute permission to this script with chmod +x dev or similar.
 
+styles - bonus styles for GEdit
+-------------------------------
+
+Folder /styles contains bonus GEdit style called Nostalgia inspired by VC6. 
+Does anyone remember VC6 (MS Visual C++ 6)? At some point it was my favorite IDE... nostalgia.
+
+Put it into ./local/share/gedit/styles and enable style in Preferences.
+
 
 
