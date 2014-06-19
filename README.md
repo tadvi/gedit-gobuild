@@ -7,15 +7,15 @@ GoBuild plugin version 1.2 for GEdit. Plugin attaches to on_save event
 in GEdit for Go language files only. It does nothing for other file types.
 
 Runs "go build" but if current filename has "_test.go" in the name 
-then runs "go test" on current file's directory. Waits for number of seconds 
-and then timeouts if process takes way too long, so GEdit would no freeze.
+then runs "go test -c" on current file's directory. Waits for number of seconds 
+and then timeouts if process takes way too long, so GEdit would not freeze.
 
 Current build directory is determined based on current open file directory.
 
  * Plug-in designed for fast development on small to mid size projects.
  * Not designed for large Go projects because compilation will timeout if it 
 takes too long.
- * Not designed for Go unit tests that take long time to run.
+ * Not designed to run Go unit tests. Only compiles them.
 
 ![screen1](gobuildscreen1.png)
 
