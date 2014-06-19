@@ -27,10 +27,6 @@ the current file.
 
 Shows last successful build.
 
-![screen3](gobuildscreen3.png)
-
-Shows "go test" failures.
-
 Known issues 
 ------------
 
