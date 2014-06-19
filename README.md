@@ -3,7 +3,7 @@ gedit-gobuild
 
 GoBuild - Gedit 3 plugin for Go develoment. golang 
 
-GoBuild plugin version 1.0 for GEdit. Plugin attaches to on_save event
+GoBuild plugin version 1.2 for GEdit. Plugin attaches to on_save event
 in GEdit for Go language files only. It does nothing for other file types.
 
 Runs "go build" but if current filename has "_test.go" in the name 
@@ -66,11 +66,16 @@ modified to use keyboard shortcut (such as 'F5') instead of on_save action.
 
 Ops, I forgot to mention...Go is **awesome**. But you probably already know that.
 
-Update version 1.1
-------------------
+Version 1.2 changes
+-------------------
 
-Fixes issues in 'go test' execution.
-Increased timeout to 10 seconds to allow longer running tests.
+Increased timeout to 11 seconds to allow long running builds.
+
+Fixes issues in 'go test' execution. 
+Changed in version 1.2 to compile tests with -c flag only and do not run them.
+Prior versions of this plug-in would also run the tests but if tests run long time then they would timeout.
+Version 1.2 compiles tests into pkg.test binary but does not run them.
+You can run "go test" or "pkg.test" from bash terminal or by other means, not via this plug-in.
 
 Working with multiple Go environments
 -------------------------------------

@@ -60,7 +60,7 @@ class GoBuildAfterSavePlugin(GObject.Object, Gedit.ViewActivatable):
 		if self.doc.get_language():
 			lang = self.doc.get_language().get_name()		
 			if lang == "Go":
-				self.timeout_command(9.8)	# do not wait for more than 9.8 sec.
+				self.timeout_command(10.9)	# do not wait for more than 11 sec.
 			
 	def show_error(self, msg):
 		if GoBuildGlobal.windowClass != 0:
@@ -80,8 +80,11 @@ class GoBuildAfterSavePlugin(GObject.Object, Gedit.ViewActivatable):
 		pdir = os.path.dirname(self.doc.get_location().get_path())
 		command = 'cd ' + pdir + ' && go build'
 		self.test_mode = False
-		if '_test.go' in filename:	# run testing if it is test file
-			command = 'cd ' + pdir + ' && go test'
+		if '_test.go' in filename:	# compile testing if it is test file
+			# changed in version 1.2 to compile tests with -c flag only and do not run them
+			# prior versions would also run the tests but if tests run long then they would timeout
+			# run "go test" from bash terminal or by other means, not via this plug-in
+			command = 'cd ' + pdir + ' && go test -c'	
 			self.test_mode = True
 		
 		start = datetime.datetime.now()
