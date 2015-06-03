@@ -56,7 +56,7 @@ class GoBuildAfterSavePlugin(GObject.Object, Gedit.ViewActivatable):
 		pass
 
 	def on_document_saving(self, *args):
-		"""Strip trailing spaces in document."""
+		"""Run build if language is right"""
 		if self.doc.get_language():
 			lang = self.doc.get_language().get_name()		
 			if lang == "Go":
